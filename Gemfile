@@ -35,10 +35,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'carrierwave'
 gem 'twitter-bootstrap-rails'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-line'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'better_errors'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'spring-commands-rspec'

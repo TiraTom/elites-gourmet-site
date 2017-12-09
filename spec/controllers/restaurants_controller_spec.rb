@@ -9,4 +9,29 @@ RSpec.describe RestaurantsController, type: :controller do
     end
   end
 
+  describe "POST /restaurant/confirm" do
+    subject { post :confirm }
+    before { login }
+    
+    it ''
+    
+  end
+
+  describe "POST /restaurant/:id/confirm" do
+    it ''
+  end
+  
+  describe 'POST /restaurant' do
+    subject { post :create, restaurant: attributes_for(:restaurant) }
+    before { login }
+    
+    it '新しいrestaurantが作成されること' do
+      expect {
+        subject
+      }.to change(Restaurant, :count).by(1)
+    end
+  end
+      
+
+
 end

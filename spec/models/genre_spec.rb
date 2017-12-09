@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Genre, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  descripbe 'バリデーション' do
+    it 'nameは必須' do
+      is_expected.to validate_presence_of(:name)
+    end
+  end
 end

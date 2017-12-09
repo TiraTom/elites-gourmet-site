@@ -2,9 +2,17 @@ class RestaurantsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   
   def index
+    @q = Restaurant.search(params[:q])
+    @restaurants = @q.result.page(params[:page]).per(5).order(:id)
   end
   
   def show
+    @restaurant = Restaurant.find(params[:id])
+    @map = Gmaps4rails.build_markers([@restaurant]) do |res, marker|
+      marker.lat res.latitude
+      marker.lng res.longitude
+      marker.json({title: res.name})
+    end
   end
   
   def new

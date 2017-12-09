@@ -44,6 +44,10 @@ gem 'seed-fu'
 gem 'gmaps4rails'
 gem 'geocoder'
 
+gem 'ransack'
+gem 'kaminari'
+gem 'kaminari-bootstrap'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

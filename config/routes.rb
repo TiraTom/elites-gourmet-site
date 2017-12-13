@@ -11,6 +11,8 @@ Rails.application.routes.draw do
       post 'confirm'
     end
   end
+  
+  resources :reviews, only: [:create, :destroy]
 
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks'

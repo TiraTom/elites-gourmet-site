@@ -47,10 +47,14 @@ gem 'geocoder'
 gem 'ransack'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
+gem 'ckeditor'
+
+gem 'jquery-turbolinks'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'pry-byebug'
+  gem 'pry-rails'
   gem 'better_errors'
   gem 'rspec'
   gem 'rspec-rails'

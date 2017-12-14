@@ -82,7 +82,16 @@
         <%= rf.hidden_field :image %>
         <%= rf.hidden_field :image_cache %>
       <% end %>
+
+      <tr class="introduction">
+        <th><%= f.label :introduction %></th>
+        <td><%= raw @restaurant.introduction %></td>
+        <%= f.hidden_field :introduction %>
+      </tr>
+
     </table>
+    
+    
     
     <div class="actions">
       <%= f.submit '戻る', class: 'btn btn-danger', name: 'back' %>

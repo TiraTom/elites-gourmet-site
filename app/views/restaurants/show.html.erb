@@ -34,6 +34,14 @@
       </ul>
     </div>
     <div class="col-md-7 info">
+      <div class="introduction">
+        <%= label :restaurant, :introduction %><br />
+        <% if @restaurant.introduction.nil? %>
+          - - - - - -
+        <% else %>
+          <%= raw @restaurant.introduction %>
+        <% end %>
+      </div>
       <div>
         <%= label :restaurant, :telephone_number %><%= @restaurant.telephone_number %>
       </div>

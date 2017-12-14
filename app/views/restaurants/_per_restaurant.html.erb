@@ -13,6 +13,9 @@
         <div class="genres">
           <%= render 'restaurants/genre_list', restaurant: restaurant %>
         </div>
+        <div class="introduction">
+          <%= Sanitize.clean(restaurant.introduction, :whitespace_elements => [:p, :div]).truncate(50) unless restaurant.introduction.nil? %>
+        </div>
       </div>
     </div>
   <% end %>

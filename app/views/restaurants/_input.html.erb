@@ -19,22 +19,38 @@
     </div>
     
     <div class="form-group">
-      <%= f.label :name %><br />
+      <%= f.label :name %>
+      <span class="introduction_info">
+        <%= t('restaurant.necessary') %>
+      </span>
+      <br />
       <%= f.text_field :name, autofocus: true, class: 'form-control' %>
     </div>
     
     <div class="form-group">
-      <%= f.label :telephone_number %><br />
+      <%= f.label :telephone_number %>
+      <span class="introduction_info">
+        <%= t('restaurant.necessary') %>
+      </span>
+      <br />
       <%= f.text_field :telephone_number, class: 'form-control' %>
     </div>
     
     <div class="form-group">
-      <%= f.label :address %><br />
+      <%= f.label :address %>
+      <span class="introduction_info">
+        <%= t('restaurant.necessary') %>
+      </span>
+      <br />
       <%= f.text_field :address, class: 'form-control' %>
     </div>
     
     <div class="form-group">
-      <%= f.label :genre_ids %><br />
+      <%= f.label :genre_ids %>
+      <span class="introduction_info">
+        <%= t('restaurant.necessary') %>
+      </span>
+      <br />
       <% Genre.all.order(:id).each do |g| %>
         <label class="checkbox-inline">
           <%= f.check_box :genre_ids, { multiple: true, include_hidden: false, checked: @restaurant.genre_ids.include?(g.id)}, g.id, nil %>
@@ -44,27 +60,52 @@
     </div>
     
     <div class="form-group">
-      <%= f.label :has_private_room %><br />
+      <%= f.label :has_private_room %>
+      <span class="introduction_info">
+        <%= t('restaurant.necessary') %>
+      </span>
+      <br />
       <%= f.radio_button :has_private_room, true %>有
       <%= f.radio_button :has_private_room, false %>無
     </div>
     
     <div class="form-group">
-      <%= f.label :seat_count %><br />
+      <%= f.label :seat_count %>
+      <span class="introduction_info">
+        <%= t('restaurant.necessary') %>
+      </span>
+      <br />
       <%= f.number_field :seat_count, class: 'form-control' %>
     </div>
     
     <div class="form-group">
-      <%= f.label :open_date %><br />
+      <%= f.label :open_date %>
+      <span class="introduction_info">
+        <%= t('restaurant.necessary') %>
+      </span>
+      <br />
       <%= f.date_field :open_date, class: 'form-control' %>
     </div>
     
     <div class="form-group">
-      <%= label_tag I18n.t('activerecord.attributes.restaurant.image') %><br />
+      <%= label_tag I18n.t('activerecord.attributes.restaurant.image') %>
+      <span class="introduction_info">
+        <%= t('restaurant.necessary_img') %>
+      </span>
+      <br />
       <%= f.fields_for :restaurant_images do |rf| %>
         <%= rf.file_field :image %><%= "設定中[#{rf.object.image}]" if rf.object.image? %>
         <%= rf.hidden_field :image_cache %>
       <% end %>
+    </div>
+    
+    <div class="form-group">
+      <%= label_tag I18n.t('activerecord.attributes.restaurant.introduction') %>
+        <span class="introduction_info">
+          <%= t('restaurant.not_necessary') %>
+        </span>
+      <br />
+      <%= f.cktext_area :introduction, rows: 5 %>
     </div>
     
     <div class="actions">

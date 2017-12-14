@@ -6,6 +6,13 @@
   margin-top: 0;
 }
 
+.wrapper.restaurant_input {
+  .introduction_info {
+    color: red;
+    font-size: small;
+  }
+}
+
 .restaurant_confirm {
   tr.image {
     img {
@@ -13,6 +20,10 @@
       max-height: 380px;
     }
   }
+}
+
+.introduction {
+  word-break: break-all;
 }
 
 ul.genre_list {

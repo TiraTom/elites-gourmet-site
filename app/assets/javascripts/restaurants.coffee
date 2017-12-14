@@ -3,7 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 ready = ->
-  alert "helo"
   $('ul.small_images').find('img').mouseover (e) ->
     img = $(e.target)
     $('#big_image').attr 'src', img.attr('src')

@@ -104,6 +104,7 @@ class RestaurantsController < ApplicationController
       :has_private_room,
       :seat_count,
       :open_date,
+      :introduction,
       genre_ids: [],
       restaurant_images_attributes: [:id, :image, :image_cache]
     )

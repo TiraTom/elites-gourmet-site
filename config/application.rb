@@ -26,5 +26,6 @@ module ElitesGourmetSite
     config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
     
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| %Q(#{html_tag}).html_safe }
+    
   end
 end
